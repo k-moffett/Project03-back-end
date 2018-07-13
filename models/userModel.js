@@ -60,6 +60,7 @@ const userModel = {
     },
 
     getUser(sessid) {
+      console.log(sessid, 'right before call to DB in userModel.getUser()')
         return new Promise((resolve, reject) => {
               connection.query(`SELECT * FROM users WHERE sessid=${connection.escape(sessid)};`, function (error, results, fields){
                 if (error) {reject(error)}
