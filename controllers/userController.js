@@ -8,6 +8,10 @@ const userController = {
 
     loginUser(user) {
         return userModel.passwordCheck(user)
+    },
+
+    getUser(sessid) {
+        return userModel.getUser(sessid)
     }
 
 }
