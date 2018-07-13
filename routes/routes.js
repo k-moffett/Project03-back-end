@@ -43,6 +43,7 @@ module.exports = (app) => {
 	app.post('/getUser', (req, res) => {
 		userController.getUser(req.body.sessid)
 		.then((response) => {
+			console.log(response, 'GETUSER')
 			res.send(response)
 		})
     });
