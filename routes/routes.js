@@ -4,6 +4,10 @@ const hasher = require('./hasher')
 
 module.exports = (app) => {
 
+	app.get('/', (req, res) => {
+		res.sendFile(path.join( __dirname, 'build'));
+	  });
+
     app.post('/register', (req, res) => {  
 		let sessid = cookie()
 		let newUser = {
