@@ -12,6 +12,10 @@ const userController = {
 
     getUser(sessid) {
         return userModel.getUser(sessid)
+    },
+
+    user_auth(sessid) {
+        return userModel.user_auth(sessid)
     }
 
 }
