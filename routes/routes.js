@@ -38,6 +38,7 @@ module.exports = (app) => {
 		.then((response) => {
 			console.log(response, 'response from /login')
 		res.cookie('sessid' , sessid).send('Cookie is set');
+		res.send(response)
 		})
 	});
 	
