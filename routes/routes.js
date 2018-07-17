@@ -22,7 +22,7 @@ module.exports = (app) => {
 				if (response === 'account exists') {
 					res.send({emailCheck: 'account exists' })
 				} else {
-				res.send({sessid: sessid}) 
+				res.cookie('sessid' , sessid).send('Cookie is set');
 				}	
 			})
     });
@@ -37,10 +37,7 @@ module.exports = (app) => {
 		userController.loginUser(user)
 		.then((response) => {
 			console.log(response, 'response from /login')
-			res.send({
-				passCheck: response, 
-				sessid: sessid
-			})
+		res.cookie('sessid' , sessid).send('Cookie is set');
 		})
 	});
 	
