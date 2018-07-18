@@ -37,7 +37,7 @@ module.exports = (app) => {
 		userController.loginUser(user)
 		.then((response) => {
 			console.log(response, 'response from /login')
-		res.cookie('sessid' , sessid).send({passCheck: response});
+		res.send({passCheck: response});
 		})
 	});
 	
